@@ -18,6 +18,6 @@ func printTriangle() {
 	}
 }
 
-func main() {
+func main12() {
 	printTriangle()
 }
