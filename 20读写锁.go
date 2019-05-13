@@ -32,7 +32,7 @@ func read(idx int) {
 	}
 }
 
-func main() {
+func main20() {
 	for i := 0; i < 5; i++ {
 		go write(i)
 	}
