@@ -17,7 +17,7 @@ var message = make(chan string)
 
 func WriteMessageToClient(client Client, conn net.Conn) {
 	for msg := range client.C {
-		conn.Write([]byte(msg))
+		conn.Write([]byte(client.Name + msg))
 	}
 }
 
@@ -34,7 +34,7 @@ func HandleConnect(conn net.Conn) {
 	buf := make([]byte, 4094)
 	for {
 		n, _ := conn.Read(buf)
-		message <- clnt.Name + string(buf[:n])
+		message <- string(buf[:n])
 	}
 
 }
